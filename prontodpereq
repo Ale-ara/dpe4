@@ -1,0 +1,821 @@
+
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://forumeiros.github.io/assets/src/form-generator/form-replace.js" type="text/javascript"></script>
+
+    <title>[DEP] Requerimentos</title>
+    <link rel="icon" href="https://i.imgur.com/h7uldXK.gif">
+
+
+    <style>
+       body {
+            background-image: url('https://i.imgur.com/YxGm99o.jpeg');
+            background-size: cover;
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+        
+        @keyframes colors {
+            
+            0%{
+                background-position: 0% 50%;
+            }
+    
+            50%{
+                background-position: 100% 50%;
+            }
+    
+            100%{
+                background-position: 0% 50%;
+         
+           }
+
+        }
+           .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #424950;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card-footer {
+            background-color: #343a40;
+            border-top: 1px solid #dee2e6;
+            padding: 0.75rem 1.25rem;
+            margin-top: 15px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        
+
+
+        }
+        form {
+            background: rgb(233, 233, 233);
+            padding: 4em 4em 2em;
+            margin: 40px auto 0;
+            box-shadow: 0 0 1em white;
+            border-radius: 5px;
+            width: 100%;
+            animation: pulse 3.5s infinite alternate; /* Aplicando a animação de pulso ao formulário */
+        }
+
+        /* Definindo a animação de pulso */
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        p {
+            margin: 0 0 3em 0;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-size: 1.6em;
+            margin: 0 0 .5em;
+            color: #333;
+        }
+
+        .textVoltar {
+            font-size: 1.6em;
+        }
+
+        input {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            outline: none
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            font-size: 1.6em;
+            padding: .8em .5em;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            background: #fff
+        }
+
+        .left,
+        .right {
+            border-radius: 5px;
+            display: block;
+            font-size: 1.3em;
+            text-align: center;
+            position: absolute;
+            background: #100101;
+            padding: 7px 10px;
+            color: #fff;
+        }
+
+        .left {
+            left: -60%;
+            top: 18px;
+            width: 200px;
+        }
+
+        .right {
+            left: 105%;
+            top: 25px;
+            width: 160px;
+        }
+
+        .left:after,
+        .right:after {
+            border: solid transparent;
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 50%;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-width: 8px;
+            margin-top: -8px;
+        }
+
+        .right:after {
+            right: 100%;
+            border-right-color: #000080;
+        }
+
+        .left:after {
+            left: 100%;
+            border-left-color: #000080;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background: #000080;
+            box-shadow: 0 3px 0 0 #000080;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font-size: 2em;
+            line-height: 1.6em;
+            margin: 2em 0 0;
+            outline: none;
+            padding: .8em 0;
+            text-shadow: 0 1px #68B25B;
+        }
+
+        select {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            outline: none;
+            background: rgba(255, 255, 255, 0.397);
+            border: 1px solid #e5e5e5;
+            font-size: 1.6em;
+            padding: .8em .5em;
+            border-radius: 5px;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -80px;
+            padding-bottom: 20px;
+        }
+
+        .btnVoltar {
+            display: block;
+            margin-top: -40px;
+            padding-bottom: 30px;
+            color: #000000;
+            text-align: right;
+        }
+
+        .btnVoltar:hover {
+            color: rgba(0,0,0);
+        }
+
+        .v-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon,
+        .text {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .chkbox {
+            padding-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<div class="footer">
+    <div>Todos os direitos reservados à Diretoria de Ensino Militar.</div>
+    <div> </div> Desenvolvido por Qox ©</div>
+</div>
+
+
+<body class="v-center">
+    <!--Campo onde fica o template da mensagem. De exemplo, fica o primeiro formulário-->
+    <textarea style="display:none" id="fa-generated-message">        [b]ENTRADA NA COMPANHIA[/b]
+        [b]Nick:[/b] {field0}
+        [b]Data de entrada:[/b] {field2}
+        [b]{field1}[/b]
+    </textarea>
+
+    <div class="container d-flex justify-content-center">
+        <!--             
+    
+
+            
+        Menu principal
+
+        -->
+        <div class="col-lg-6 col-md-8 col-sm-12" id="formPrincipal">
+            <form>
+                
+                
+                <p>
+                    <label for="opcoesIniciais">Selecione o formulário desejado</label> <select name="opcoesIniciais" id="opcoesIniciais">
+                        <option value="1">1. Admissão</option>
+                        <option value="3">2. Pedido de Licença / Reserva</option>
+                        <option value="4">3. Retorno de Licença / Reserva</option>
+                        <option value="5">4. Promoção / Rebaixamento</option>
+                        <option value="6">5. Advertência</option>
+                        <option value="7">6. Saída da companhia</option>
+                        <option value="8">7. Expulsão da companhia</option>
+                        <option value="9">8. Alteração de Nick</option>
+                        <option value="10">9. Reintegração de Membros</option>
+                    </select>
+                </p>
+                <p>
+                    <input id="selecaoDeFormulario" value="Próximo" type="button">
+                </p>
+            </form>
+        </div>
+
+        <!--             
+    
+            1- Entrada na companhia
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form1">
+            <form>
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field0">Nick</label> <input type="text" placeholder="Nick do novo membro" name="nick" id="field0" required=""> <span class="right">Informe o nick do policial</span>
+                </p>
+
+                <p>
+                    <label for="field1">Situação</label> <select id="field1">
+                
+                        <option value="*Necessário adicionar no subfórum.">Necessário adicionar no subfórum</option>
+                        <option value="*Necessário adicionar no emblema.">Necessário adicionar no emblema</option>
+                        <option value="*Necessário adicionar no subfórum e no emblema.">Adicionado em ambos</option>
+                        </option>
+
+                    </select> <span class="right">Selecione uma das opções.</span>
+                </p>
+
+                 <p>
+              </p><div class="form-group" style="display: none;">
+                  <label for="field2">Data</label>
+                  <input type="text" name="test2" id="field2" class="form-control" required="">
+                </div>                        
+    <p></p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            2. Aprovação em Cursos / Avaliação
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form2">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field3">Nick(s) do(s) aprovado(s)</label> <input type="text" placeholder="Ex: Qox" name="nick" id="field3" required=""> <span class="right">Digite o nick dos aprovados na graduação.</span>
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            3. Pedido de Licença / Reserva
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form3">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field5">Nick</label> <input type="text" placeholder="Ex: Qox" name="nick" id="field5" required=""> <span class="right">Digite o nick</span>
+                </p>
+
+                <p>
+                    <label for="field6">Período da Licença / Reserva (em dias)</label> <input value="5" max="30" min="5" type="number" name="período" id="field6" required=""> <span class="right">Selecione
+                        a duração da
+                        licença (O valor é em dias)</span>
+                </p>
+
+                <p>
+                    <label for="field8">Permissão</label> <input type="text" placeholder="Coloque o nickname do ministro+" name="permissão" id="field8" required="">
+                    <span class="right">Nick do policial que aprovou o pedido
+                        de licença</span>
+
+                    <br>
+                </p>
+                <p>
+</p><div class="form-group form-check">
+                        <input required="" type="checkbox" class="form-check-input" id="checkbox_form6" style="position: absolute; right: 220px;">
+                        <label for="checkbox_form6" class="form-check-label"> Li e concordo com as normas de licença/reserva.
+                        Sendo assim, me responsabilizo em postar o retorno no final do prazo em até 24 horas.
+                        Estarei passível de ser expulso da companhia,
+                        caso não for realizado a postagem.</label>
+                    </div>         
+                <p></p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            4. Retorno de Licença / Reserva
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form4">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field9">Nick</label> <input type="text" placeholder="Ex: Qox" name="nick" id="field9" required=""> <span class="right">Seu nick</span>
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            5. Promoção / Rebaixamento
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form5">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field10">Nick</label> <input type="text" placeholder="Ex: Qox" name="nick" id="field10" required=""> <span class="right">Nick do promovido/rebaixado</span>
+                </p>
+
+                <p>
+                    <label for="field11">Cargo atual</label> <select id="field11">
+                        <option value="" disabled="" selected="">Selecione o cargo atual</option>
+                <option value="Instrutor">Instrutor</option>
+                <option value="Graduador">Graduador</option>
+                <option value="Ministro da Financeiro">Ministro Financeiro</option>
+                <option value="Ministro Fiscalização">Ministro da Fiscalização</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Vice-líder">Vice-líder</option>
+                <option value="Líder">Líder</option>
+</select><span class="right">Cargo que o policial se encontra antes desta promoção/rebaixamento</span>
+                </p>
+
+                <p>
+                    <label for="field12">Novo cargo</label> <select id="field12">
+                        <option value="" disabled="" selected="">Selecione o novo cargo</option>
+                        <option value="Instrutor">Instrutor</option>
+                        <option value="Graduador">Graduador</option>
+                        <option value="Ministro da Financeiro">Ministro Financeiro</option>
+                        <option value="Ministro Fiscalização">Ministro da Fiscalização</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Vice-líder">Vice-líder</option>
+                        <option value="Líder">Líder</option>
+</select> <span class="right">Cargo a ser
+                        contemplado</span>
+                </p>
+
+                <p>
+                    <label for="field13">Motivo</label> <input type="text" name="motivo" id="field13" required="" value="Avaliação da liderança.">
+                    <span class="right">Motivo para a promoção</span>
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            6. Advertência Escrita
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form6">
+            <form action="https://www.pmhabbo.com/post">
+                
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field14">Nick</label> <input type="text" name="nick" id="field14" required=""> <span class="right">Nick do policial que recebeu a advertência</span>
+                </p>
+
+                <p>
+                    <label for="dataTermino">Data de início</label> <input type="date" name="término" id="dataTermino" required="">
+                    <input style="display: none" type="text" name="dataterminoformatada" id="field15" required="">
+                    <span class="right">Data de início da advertência</span>
+                </p>
+
+                <p>
+                    <label for="field16">Motivo</label> <input type="text" name="Motivo" id="field16" required="">
+                    <span class="right">Motivo da advertência</span>
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            7. Saída da companhia
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form7">
+            <form action="https://www.pmhabbo.com/post">
+              
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field17">Nick</label> <input type="text" name="nick" id="field17" required=""> <span class="right">Seu nick (não é permitido preencher este formulário para terceiros)</span>
+                </p>
+
+                <p>
+                    <label for="field18">Motivo</label> <input type="text" name="motivo" id="field18" required="">
+                    <span class="right">Motivo pelo qual deseja sair da companhia</span>
+                </p>
+
+                <p>
+                    <label for="field19">Permissão</label> <input type="text" name="permissão" id="field19" required="">
+                    <span class="right">Policial que permitiu e está ciente do seu desligamento.</span>
+                    <br>
+
+</p><div class="form-group form-check">
+                        <input required="" type="checkbox" class="form-check-input" id="checkbox_form6" style="position: absolute; right: 220px;">
+                        <label for="checkbox_form6" class="form-check-label"> <h1 style="color:black;font-size:14px;">Eu confirmo que estou saindo da companhia.</h1></label>
+                    </div>  
+                <p></p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+            </form>
+        </div>
+
+        <!--             
+    
+            8. Expulsão da companhia
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form8">
+
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field20">Nick</label> <input type="text" name="nick" id="field20" required=""> <span class="right">Nick do policial a ser expulso da companhia.</span>
+                </p>
+
+                <p>
+                   
+                        <label for="field40">Motivo da expulsão</label> <input type="text" name="permissão" id="field40" required="">
+                        <span class="right">Escreva o motivo da expulsão.</span>
+                        <br>
+                     
+                </p>
+
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            9. Alteração de Nick
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form9">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field23">Nick na listagem</label> <input type="text" name="nick antigo" id="field23" required=""> <span class="right">Nick antigo.</span>
+                </p>
+
+                <p>
+                    <label for="field24">Novo nick</label> <input type="text" name="novo nick" id="field24" required="">
+                    <span class="right">Nick pelo qual o antigo deverá ser substituido nas listagens.</span>
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+        <!--             
+    
+            10. Reintegração de Membros
+
+            -->
+        <div style="display: none;" class="col-lg-6 col-md-8 col-sm-12" id="form10">
+            <form action="https://www.pmhabbo.com/post">
+               
+                <a href="javascript:window.location.reload(true)" class="btnVoltar">
+                    <span class="text textVoltar">« Voltar</span>
+                </a>
+
+                <p>
+                    <label for="field25">Nick</label> <input type="text" name="nick" id="field25" required=""> <span class="right">Nick do policial a ser reintegrado</span>
+                </p>
+
+                <p>
+                    <label for="field26">Se manteve por mais de um mês no cargo?</label> <select id="field26">
+              <option value="Não">Sim</option>
+              <option value="Não">Não</option>
+              
+</select> <span class="right">Insira se o membro obteve mais de um mês no
+                        companhia.</span>
+                </p>
+
+                <p>
+                    <label for="field27">Permissão</label> <input type="text" name="permissão" id="field27" required="">
+                    <span class="right">Policial que aprovou a reintegração.</span>
+                </p>
+
+                <p>
+                   
+                </p>
+
+                <p>
+                    <input name="post" value="Enviar" type="submit">
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+    <!--             
+
+    Scripts
+
+             --><script>
+    $(function() {
+
+        pegaDataAtual();
+
+        function pegaDataAtual() {
+        document.getElementById("field2").value = formataData2(new Date(Date.now()));
+        }
+
+        function formataData2(data) {
+    return ("0" + data.getDate()).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear()
+}
+
+            /**
+             * Posta o form
+             */
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+
+                //substitui field0, field1 pelos valores corretos
+                format_fields();
+                    $.post('/post', {
+                        t: 3319,
+                        message: $('#fa-generated-message').val().trim(),
+                        mode: 'reply',
+                        tid: $('[name="tid"]:first').val(),
+                        post: 1,
+                    }).done(function () {
+                        location.href = 'http://' + location.host + '/t3319-dep-requerimentos-da-companhia';
+                    }).fail(function () {
+                        alert('Houve um erro! Tente novamente!');
+                    });
+            });
+
+            /**
+             * Método para alterar o template da mensagem que é enviada ao fórum. É acionado quando a pessoa seleciona um modelo.
+             */
+            function alteraTemplateMensagem(opcaoEscolhida) {
+                var texto;
+                switch (opcaoEscolhida) {
+                    case "1":
+                        texto =
+                            "[size=18][center][color=#330000][b]ENTRADA NA COMPANHIA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick(s):[/b] {field0}\n" +
+                            "[b]Data de entrada:[/b] {field2}\n" +
+                            "&#10149; [b]{field1}[/b]";
+                        break;
+                    case "2":
+                        texto =
+                            "[size=18][center][color=#330000][b]GRADUAÇÃO[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick(s) do(s) aprovado(s):[/b] {field3}\n";
+                        break;
+                    case "3":
+                        texto =
+                            "[size=18][center][color=#330000][b]PEDIDO DE LICENÇA / RESERVA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field5}\n" +
+                            "[b]Período da Licença / Reserva:[/b] {field6} dias\n" +
+                            "[b]Permissão:[/b] {field8}\n\n" +
+                            "&#10149; Li e concordo com as normas de licença/reserva. Sendo assim, me responsabilizo em postar o retorno no final do prazo em até 24 horas. Estarei passível de ser expulso da companhia, caso não for realizado a postagem.";
+                        break;
+                    case "4":
+                        texto =
+                            "[size=18][center][color=#330000][b]RETORNO DE LICENÇA / RESERVA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field9}\n" +
+                            "&#10149; Estou retornando de minha licença / reserva.";
+                        break;
+                    case "5":
+                        texto =
+                            "[size=18][center][color=#330000][b]PROMOÇÃO/REBAIXAMENTO[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field10}\n" +
+                            "[b]Cargo atual:[/b] {field11}\n" +
+                            "[b]Novo cargo:[/b] {field12}\n" +
+                            "[b]Motivo:[/b] {field13}";
+                        break;
+                    case "6":
+                        texto =
+                            "[size=18][center][color=#330000][b]ADVERTÊNCIA INTERNA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field14}\n" +
+                            "[b]Término:[/b] {field15}\n" +
+                            "[b]Motivo:[/b] {field16}";
+                        break;
+                    case "7":
+                        texto =
+                            "[size=18][center][color=#330000][b]SAÍDA DA COMPANHIA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field17}\n" +
+                            "[b]Motivo:[/b] {field18}\n" +
+                            "[b]Permissão:[/b] {field19}\n\n" +
+                            "&#10149; Eu estou saindo com permissão do ministério+.";
+                        break;
+                    case "8":
+                        texto =
+                            "[size=18][center][color=#330000][b]EXPULSÃO DA COMPANHIA[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field20}\n" +
+                            "[b]Motivo:[/b] {field40}";
+                        break;
+                    case "9":
+                        texto =
+                            "[size=18][center][color=#330000][b]ALTERAÇÃO DE NICK[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick na listagem:[/b] {field23}\n" +
+                            "[b]Novo nick:[/b] {field24}";
+                        break;
+                    case "10":
+                        texto =
+                            "[size=18][center][color=#330000][b]REINTEGRAÇÃO DE MEMBROS[/b][/color][/center][/size]\n\n" +
+                            "[b]Nick:[/b] {field25}\n" +
+                            "[b]Teve um mês ou mais na companhia:[/b] {field26}\n" +
+                            "[b]Permissão:[/b] {field27}\n"
+                            
+                        break;
+                    default:
+                        break;
+                }
+
+                $("#fa-generated-message").html(texto);
+
+            }
+
+            $("#dataTermino").change(function () {
+                $("#field15").val(formataData(new Date($("#dataTermino").val())));
+            })
+
+            //mostra o formulario escolhido
+            $("#selecaoDeFormulario").click(function () {
+                alteraTemplateMensagem($('#opcoesIniciais').val());
+
+                $("#formPrincipal").fadeOut(function () {
+                    $("#form" + $('#opcoesIniciais').val()).fadeIn();
+                });
+            })
+
+            //PARTE DE SUBSTITUIR OS VALORES
+            list_elements_parse = '';
+            list_elements_number = '';
+            mode = 0;
+
+            function format_fields() {
+                $('*[template]').each(function () {
+                    formated = jQuery(this).attr('template').replace(/{field([0-9]+)}/gi, function (exp, i) {
+                        return field_value(i)
+                    });
+                    jQuery(this).val(formated)
+                });
+                jQuery('#fa-generated-message').html(jQuery('#fa-generated-message').html().replace(/{field([0-9]+)}/gi, function (exp, i) {
+                    return field_value(i)
+                }));
+                return true
+            }
+
+            function field_value(field_id) {
+                field = jQuery('#field' + field_id);
+                if (jQuery('#field' + field_id)[0].nodeName == 'SELECT') {
+                    return field.find(":selected").text();
+                } else {
+                    return field.val()
+                }
+            }
+            jQuery(function () {
+                jQuery('dl[title]').removeAttr('title')
+            });
+        });
+    </script>
+
+    <script>
+      //por algum motivo o seletor de data tá devolvendo com 01 dia a menos, por isso tem que deixar 31 dias 
+      function formataData(data) {
+    data = data.addDays(31)
+    return ("0" + data.getDate()).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear()
+}
+
+Date.prototype.addDays=function(d){return new Date(this.valueOf()+864E5*d);};
+    </script>
+
+  
+</script>
+
+</body></html>
